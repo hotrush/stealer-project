@@ -14,10 +14,10 @@ class ExampleSpider extends SpiderAbstract
      *
      * @return Request
      */
-    public function getStartRequest()
+    public function getStartRequest(): Request
     {
         $callback = function (ResponseInterface $response) {
-            // you can find and data or other links to forward here...
+            // you can find data or other links to forward here...
         };
         $errorCallback = function ($reason) {
             $this->errorCallback($reason);

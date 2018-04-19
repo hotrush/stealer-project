@@ -6,6 +6,11 @@ use Hotrush\Stealer\AdaptersRegistry;
 
 class ExampleItem extends BaseItem
 {
+    /**
+     * Any defined item property
+     *
+     * @var mixed
+     */
     private $exampleProperty;
 
     /**
@@ -15,7 +20,7 @@ class ExampleItem extends BaseItem
      */
     public function processItem(AdaptersRegistry $adaptersRegistry)
     {
-        $beanstalk = $adaptersRegistry->getAdapter('beanstalk');
-        $beanstalk->put(serialize($this));
+        $exampleAdapter = $adaptersRegistry->getAdapter('example');
+        $exampleAdapter->doSmth(serialize($this));
     }
 }

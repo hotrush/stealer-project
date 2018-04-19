@@ -15,5 +15,5 @@ $logger = new \Monolog\Logger('stealer', [new \Monolog\Handler\StreamHandler(STD
 $client = new \Hotrush\Stealer\Client\Guzzle($loop, $logger);
 
 // Run all the magic
-$coordinator = new \Hotrush\Stealer\Coordinator($registry, $loop, $client, $adaptersRegistry, $logger);
-$coordinator->run();
+$stealer = new \Hotrush\Stealer\App($loop, $client, $adaptersRegistry, $registry, $logger);
+$stealer->run();
